@@ -2,14 +2,15 @@ export default function JobsInfo({ currentTab }) {
   const { company, dates, order, title, duties } = currentTab
 
   return (
-    <div>
-      <h1>{company}</h1>
-      <h2>{title}</h2>
+    <article className="job-info">
+      <h3>{company}</h3>
+      <span className="job-company">{title}</span>
+      <p className="job-date">{dates}</p>
       <ul>
         {duties.map((duty, index) => {
           return <li key={index}>{duty}</li>
         })}
       </ul>
-    </div>
+    </article>
   )
 }
