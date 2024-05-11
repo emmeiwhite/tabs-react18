@@ -54,6 +54,7 @@ export default function App() {
       <Sidebar
         tabs={tabs}
         handleCurrentTab={handleCurrentTab}
+        currentIndex={currentIndex}
       />
       <JobsInfo currentTab={tabs[currentIndex]} />
     </div>
