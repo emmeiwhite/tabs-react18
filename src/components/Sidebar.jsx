@@ -1,15 +1,11 @@
-export default function Sidebar({ currentTab }) {
-  const { company, dates, order, title, duties } = currentTab
-
-  return (
-    <div>
-      <h1>{company}</h1>
-      <h2>{title}</h2>
-      <ul>
-        {duties.map((duty, index) => {
-          return <li key={index}>{duty}</li>
-        })}
-      </ul>
-    </div>
-  )
+export default function Sidebar({ tabs, handleCurrentTab }) {
+  const totalTabs = tabs.map((tab, index) => (
+    <button
+      key={tab.id}
+      onClick={() => handleCurrentTab(index)}
+    >
+      {tab.company}
+    </button>
+  ))
+  return <div>{totalTabs}</div>
 }

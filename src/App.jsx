@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Loader from './components/Loader'
 import axios from 'axios'
-import Main from './components/Main'
 import Sidebar from './components/Sidebar'
+import JobsInfo from './components/JobsInfo'
 
 const url = 'https://www.course-api.com/react-tabs-project'
 
@@ -34,20 +34,28 @@ export default function App() {
   }, [])
 
   if (isLoading) {
-    return <Loader />
+    return (
+      <div className="jobs-center">
+        <Loader />
+      </div>
+    )
   }
 
   if (error) {
-    return <h2>Error Loading Page ...</h2>
+    return (
+      <div className="jobs-center">
+        <h2>Error Loading Page ...</h2>
+      </div>
+    )
   }
 
   return (
-    <div>
-      <Main
+    <div className="jobs-center">
+      <Sidebar
         tabs={tabs}
         handleCurrentTab={handleCurrentTab}
       />
-      <Sidebar currentTab={tabs[currentIndex]} />
+      <JobsInfo currentTab={tabs[currentIndex]} />
     </div>
   )
 }
