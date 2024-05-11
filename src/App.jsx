@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Loader from './components/Loader'
 import axios from 'axios'
+import Main from './components/Main'
+import Sidebar from './components/Sidebar'
 
 const url = 'https://www.course-api.com/react-tabs-project'
 
@@ -31,7 +33,8 @@ export default function App() {
 
   return (
     <div>
-      <h1>Tabs App</h1>
+      <Main />
+      <Sidebar />
     </div>
   )
 }
