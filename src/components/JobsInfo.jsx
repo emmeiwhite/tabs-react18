@@ -1,3 +1,5 @@
+import Duties from './Duties'
+
 export default function JobsInfo({ currentTab }) {
   const { company, dates, order, title, duties } = currentTab
 
@@ -6,11 +8,8 @@ export default function JobsInfo({ currentTab }) {
       <h3>{company}</h3>
       <span className="job-company">{title}</span>
       <p className="job-date">{dates}</p>
-      <ul>
-        {duties.map((duty, index) => {
-          return <li key={index}>{duty}</li>
-        })}
-      </ul>
+
+      <Duties duties={duties} />
     </article>
   )
 }
