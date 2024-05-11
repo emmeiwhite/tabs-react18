@@ -12,7 +12,7 @@ const Wrapper = styled.article`
   border-top-color: #007bff;
   border-bottom-color: #17a2b8;
   animation: rotate 0.5s linear infinite;
-
+  margin: 10rem auto;
   @keyframes rotate {
     0% {
       transform: rotate(0deg);
